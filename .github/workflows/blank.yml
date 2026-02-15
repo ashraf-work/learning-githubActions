@@ -1,0 +1,16 @@
+name: Debug Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Start tmate session
+        uses: mxschmitt/action-tmate@v3
+
+      - name: Keep runner alive
+        run: tail -f /dev/null
