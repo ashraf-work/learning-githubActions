@@ -1,11 +1,10 @@
 name: context-and-expressions
 
-on:
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
   context-and-expressions:
     runs-on: ubuntu-latest
 
     steps:
-     - run: echo ${{toJson(github)}}
+     - run: echo "${{toJson(github)}}"
